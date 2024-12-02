@@ -1,0 +1,14 @@
+.main-layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.sidebar {
+  flex: 1;
+  max-width: 300px;
+}
+
+.job-container {
+  flex: 3;
+}

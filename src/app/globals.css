@@ -2,11 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import the font */
+
+@font-face {
+  font-family: "inter_regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url(../../public/asset/fonts/Inter-Regular.woff) format("woff");
+}
+@font-face {
+  font-family: "inter_medium";
+  font-style: normal;
+  font-weight: normal;
+  src: url(../../public/asset/fonts/Inter-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "inter_semibold";
+  font-style: normal;
+  font-weight: normal;
+  src: url(../../public/asset/fonts/font-inter-semibold.woff) format("woff");
+}
+
+@font-face {
+  font-family: "inter_bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url(../../public/asset/fonts/Inter-Bold.woff) format("woff");
+}
+
+@font-face {
+  font-family: "inter_light";
+  font-style: normal;
+  font-weight: normal;
+  src: url(../../public/asset/fonts/Inter-Light.woff) format("woff");
+}
+
+/* Set root variables for background and foreground */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
+/* Dark mode support */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -14,8 +52,15 @@
   }
 }
 
+/* Set font-family at the root level for both light and dark mode */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif; /* Ensure this takes precedence */
+}
+
+/* If Tailwind base is overriding, use a more specific selector */
+html,
+body {
+  font-family: "Roboto", sans-serif; /* Ensure it applies across the page */
 }
