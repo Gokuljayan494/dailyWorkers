@@ -1,9 +1,12 @@
+"use client";
+
 import Filter from "@/_components/Filters";
 import React from "react";
 import "./page.css";
-import JobCard from "@/_components/JobCard";
+import DeskTopJobCard from "@/_components/DeskTopJobCard";
 import img1 from "../../../public/netflix.png";
 import img2 from "../../../public/notion.png";
+import useMediaQuery from "@/_hooks/mediaQuery";
 function index() {
   const Jobs = [
     {
@@ -28,15 +31,22 @@ function index() {
     },
   ];
 
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
+  console.log(`isMobile :${isMobile}`);
+
   return (
     <div className="main-layout">
       <aside className="sidebar">
         <Filter />
       </aside>
       <main className="job-container">
-        {Jobs.map((job) => {
-          return <JobCard key={job.id} name={job.name} img1={job?.img} />;
-        })}
+        {!isMobile &&
+          Jobs.map((job) => {
+            return (
+              <DeskTopJobCard key={job.id} name={job.name} img1={job?.img} />
+            );
+          })}
       </main>
     </div>
   );

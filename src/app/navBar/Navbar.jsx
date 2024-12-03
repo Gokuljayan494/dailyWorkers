@@ -77,7 +77,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <div className="mt-9 flex items-center justify-center">
           <label
             htmlFor="search"
@@ -111,7 +111,7 @@ const Navbar = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </nav>
   );
 };
